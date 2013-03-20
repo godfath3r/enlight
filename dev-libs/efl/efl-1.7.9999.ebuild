@@ -19,9 +19,9 @@ LICENSE="BSD"
 SLOT="0"
 IUSE="crypto tests dbus-services systemd valgrind +X wayland opengl fb sdl
 cocoa fontconfig bidi harfbuzz egl pixman +gif +jpeg +png svg tiff webp glib gstreamer
-pulseaudio gesture physics multisense xine v4l2"
+pulseaudio gesture physics multisense xinerama v4l2 xprint xscreensaver"
 
-RDEPEND="physics? ( >=sci-physics/bullet-2.80)
+RDEPEND="physics? ( >=sci-physics/bullet-2.80 )
 	sdl? ( media-libs/libsdl )
 	gif? ( media-libs/giflib )
 	jpeg? ( virtual/jpeg )
@@ -37,8 +37,8 @@ RDEPEND="physics? ( >=sci-physics/bullet-2.80)
 		x11-libs/libXi
 		x11-libs/libXrender
 		x11-libs/libXtst
-		xinerama? ( x11-libs/libXinerama x11-libs/libXrandr)
-		xprint? ( x11-libs/libXp)
+		xinerama? ( x11-libs/libXinerama x11-libs/libXrandr )
+		xprint? ( x11-libs/libXp )
 		xscreensaver? ( x11-libs/libXScrnSaver )
 	)
 "
