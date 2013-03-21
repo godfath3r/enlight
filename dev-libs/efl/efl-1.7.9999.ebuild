@@ -61,6 +61,45 @@ src_prepare() {
 	fi
 }
 
+src_configure() {
+       econf \
+               $(use_enable alsa) \
+                $(use_enable crypto) \
+                $(use_enable tests) \
+                $(use_enable dbus-services) \
+                $(use_enable systemd) \
+                $(use_enable valgrind) \
+                $(use_enable X) \
+                $(use_enable wayland) \
+                $(use_enable opengl) \
+                $(use_enable fb) \
+                $(use_enable sdl) \
+                $(use_enable cocoa) \
+                $(use_enable fontconfig) \
+                $(use_enable bidi) \
+                $(use_enable harfbuzz) \
+                $(use_enable egl) \
+                $(use_enable pixman) \
+                $(use_enable gif) \
+                $(use_enable jpeg) \
+                $(use_enable png) \
+                $(use_enable svg) \
+                $(use_enable tiff) \
+                $(use_enable webp) \
+                $(use_enable glib) \
+                $(use_enable gstreamer) \
+                $(use_enable pulseaudio) \
+                $(use_enable gesture) \
+                $(use_enable physics) \
+                $(use_enable multisense) \
+                $(use_enable xinerama) \
+                $(use_enable v4l2) \
+                $(use_enable xprint) \
+                $(use_enable xscreensaver) \
+                $(use_enable doc)
+}
+
+
 src_install() {
 	default
 }
