@@ -1,0 +1,4 @@
+efl-1.7.9999 git
+[ ] mess with --enable --disable config options
+[ ] enable profiles: dev, debug, release (and bind the appropriate USE flags)
+
