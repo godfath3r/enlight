@@ -19,7 +19,8 @@ LICENSE="BSD"
 SLOT="0"
 IUSE="dbus doc nls pango pulseaudio xcomposite xinerama xrandr"
 
-RDEPEND="pulseaudio? ( media-sound/pulseaudio )
+RDEPEND=">=dev-libs/efl-1.7.9999
+	pulseaudio? ( media-sound/pulseaudio )
 	dbus? ( sys-apps/dbus )
 	pango? ( x11-libs/pango )
 	=media-libs/freetype-2*
@@ -72,6 +73,4 @@ src_configure() {
 
 src_install() {
 	default
-	dodoc COMPLIANCE sample-scripts/*
-	dohtml docs/e16.html
 }
