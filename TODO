@@ -1,4 +1,4 @@
 efl-1.7.9999 git
-[ ] mess with --enable --disable config options
+[ ] mess with --enable --disable config options (DONE - Barbariandude)
 [ ] enable profiles: dev, debug, release (and bind the appropriate USE flags)
 
