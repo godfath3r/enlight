@@ -3,13 +3,11 @@
 # $Header: /var/cvsroot/gentoo-x86/x11-wm/enlightenment/enlightenment-0.16.9999.ebuild,v 1.40 2012/11/08 07:56:38 vapier Exp $
 
 EAPI="4"
-if [[ ${PV} == *9999 ]] ; then
-    EGIT_REPO_URI="http://git.enlightenment.org/core/${PN}.git"
-	inherit git-2 autotools
-	EGIT_BRANCH="master"
-	SRC_URI=""
-	KEYWORDS="x86"
-fi
+EGIT_REPO_URI="http://git.enlightenment.org/core/${PN}.git"
+inherit git-2 autotools
+EGIT_BRANCH="master"
+SRC_URI=""
+KEYWORDS="x86 amd64"
 inherit eutils
 
 DESCRIPTION="EFL Core Libraries"
