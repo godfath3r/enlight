@@ -11,7 +11,9 @@ $ su - *(to become root)*
 $ mkdir -p /usr/local/portage
 $ cd /usr/local/portage/
 $ git clone https://github.com/godfath3r/enlight.git
-$ echo "PORTDIR_OVERLAY=\"/usr/local/portage/enlight\"" >> /etc/make.conf 
+$ echo "PORTDIR_OVERLAY=\"/usr/local/portage/enlight\"" >> /etc/make.conf (if you have old gentoo install)
+	or
+	$ echo "PORTDIR_OVERLAY=\"/usr/local/portage/enlight\"" >> /etc/portage/make.conf (new installs)
 ```
 
 _and then emerge efl, elementary and enlightenment:
