@@ -16,13 +16,15 @@ HOMEPAGE="http://www.enlightenment.org/"
 
 LICENSE="BSD"
 SLOT="0"
-IUSE="alsa crypto tests dbus systemd valgrind +X wayland opengl fb sdl
-cocoa fontconfig +bidi harfbuzz egl pixman +gif +jpeg +png svg tiff webp glib +gstreamer
-+pulseaudio gesture +physics multisense xinerama v4l2 +xprint +xscreensaver doc"
+IUSE="alsa systemd valgrind +X wayland opengl fb sdl cocoa fontconfig +bidi
+harfbuzz egl pixman +gif +svg +tiff +webp glib +gstreamer +pulseaudio gesture
++physics multisense v4l2 +curl xinerama xprint xscreensaver doc"
 
 RDEPEND="dev-libs/check
 	dev-lang/lua
 	dev-libs/dbus-glib
+	virtual/jpeg
+	media-libs/libpng
 	media-libs/gst-plugins-base:0.10
 	dev-perl/GStreamer-Interfaces
 	gstreamer? ( media-libs/gstreamer:0.10 )
@@ -30,8 +32,6 @@ RDEPEND="dev-libs/check
 	doc? ( app-doc/doxygen )
 	sdl? ( media-libs/libsdl )
 	gif? ( media-libs/giflib )
-	jpeg? ( virtual/jpeg )
-	png? ( media-libs/libpng  )
 	bidi? ( >=dev-libs/fribidi-0.19.2 )
 	X? (
 		x11-libs/libX11
@@ -49,6 +49,7 @@ RDEPEND="dev-libs/check
 	)
 	alsa? ( media-libs/alsa-lib  )
 	pulseaudio? ( media-sound/pulseaudio  )
+	curl? ( net-misc/curl )
 "
 DEPEND="${RDEPEND}"
 
@@ -61,40 +62,28 @@ src_prepare() {
 
 src_configure() {
        econf \
-               $(use_enable alsa) \
-                $(use_enable crypto) \
-                $(use_enable tests) \
-                $(use_enable dbus dbus-services) \
                 $(use_enable systemd) \
                 $(use_enable valgrind) \
-                $(use_enable X) \
                 $(use_enable wayland) \
-                $(use_enable opengl) \
                 $(use_enable fb) \
                 $(use_enable sdl) \
                 $(use_enable cocoa) \
                 $(use_enable fontconfig) \
-                $(use_enable bidi) \
+                $(use_enable bidi freebidi) \
                 $(use_enable harfbuzz) \
                 $(use_enable egl) \
                 $(use_enable pixman) \
-                $(use_enable gif) \
-                $(use_enable jpeg) \
-                $(use_enable png) \
-                $(use_enable svg) \
-                $(use_enable tiff) \
-                $(use_enable webp) \
-                $(use_enable glib) \
+                $(use_enable gif image-loader-gif) \
+                $(use_enable svg image-loader-svg) \
+                $(use_enable tiff image-loader-tiff) \
+                $(use_enable webp image-loader-webp) \
                 $(use_enable gstreamer) \
+                $(use_enable curl) \
                 $(use_enable pulseaudio) \
                 $(use_enable gesture) \
                 $(use_enable physics) \
                 $(use_enable multisense) \
-                $(use_enable xinerama) \
-                $(use_enable v4l2) \
-                $(use_enable xprint) \
-                $(use_enable xscreensaver) \
-                $(use_enable doc)
+                $(use_enable v4l2) 
 }
 
 
