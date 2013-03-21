@@ -16,7 +16,6 @@ IUSE="bluetooth +connman +libnotify ofono static-libs test-binaries +udev"
 RDEPEND=">=dev-libs/efl-1.7.9999
 		sys-apps/dbus
 		connman? ( >=net-misc/connman-0.75 )
-		libnotify? ( >=media-libs/evas-1.7.5 )
 		udev? ( sys-power/upower sys-fs/udisks:0 )
 "
 DEPEND="${RDEPEND}"

@@ -27,6 +27,7 @@ IUSE="emotion pam spell static-libs +udev ukit ${IUSE_E_MODULES}"
 
 RDEPEND=">=dev-libs/efl-1.7.9999
 		>=media-libs/elementary-1.7.9999
+		>=dev-libs/e_dbus-1.7.5
 "
 
 DEPEND="${RDEPEND}"
