@@ -20,7 +20,7 @@ SLOT="0"
 IUSE=""
 
 RDEPEND=""
-DEPEND=">=sci-physics/bullet-2.80"
+DEPEND=">=dev-libs/efl-1.7.9999"
 PDEPEND=""
 
 src_prepare() {
