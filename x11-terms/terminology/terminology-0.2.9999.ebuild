@@ -10,7 +10,7 @@ EGIT_REPO_URI="http://git.enlightenment.org/apps/${PN}.git"
 inherit git-2 autotools eutils
 EGIT_BRANCH="master"
 
-KEYWORDS="x86"
+KEYWORDS="x86 amd64"
 
 LICENSE="BSD-2"
 SLOT="0"
@@ -21,14 +21,11 @@ RDEPEND="
 	>=media-libs/elementary-1.7.9999
 	"
 DEPEND="${RDEPEND}"
-#	virtual/pkgconfig"
 
 src_prepare() {
     if [[ ! -e configure ]] ; then
-#        eautopoint
 		eautoreconf
     fi
-
 }
 
 src_install() {

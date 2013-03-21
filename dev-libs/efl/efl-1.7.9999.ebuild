@@ -4,13 +4,11 @@
 # $Header: 
 
 EAPI="4"
-if [[ ${PV} == *9999 ]] ; then
-	EGIT_REPO_URI="http://git.enlightenment.org/core/${PN}.git"
-	inherit git-2 autotools
-	EGIT_BRANCH="master"
-	SRC_URI=""
-	KEYWORDS="x86"
-fi
+EGIT_REPO_URI="http://git.enlightenment.org/core/${PN}.git"
+inherit git-2 autotools
+EGIT_BRANCH="master"
+SRC_URI=""
+KEYWORDS="x86 amd64 arm"
 inherit eutils
 
 DESCRIPTION="EFL Core Libraries"

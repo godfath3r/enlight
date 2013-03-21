@@ -7,7 +7,7 @@ EGIT_REPO_URI="http://git.enlightenment.org/core/${PN}.git"
 inherit git-2 autotools
 EGIT_BRANCH="master"
 SRC_URI=""
-KEYWORDS="x86 amd64"
+KEYWORDS="x86 amd64 arm"
 
 inherit eutils
 
@@ -19,7 +19,7 @@ SLOT="0"
 IUSE=""
 
 RDEPEND=">=dev-libs/efl-1.7.9999
-	>=media-libs/elementary-1.7.9999
+		>=media-libs/elementary-1.7.9999
 "
 DEPEND="${RDEPEND}"
 PDEPEND=""

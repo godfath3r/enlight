@@ -10,10 +10,15 @@ DESCRIPTION="Enlightenment's (Ecore) integration to DBus"
 SRC_URI="http://download.enlightenment.org/releases/${P}.tar.bz2"
 
 LICENSE="BSD-2"
-KEYWORDS="~amd64 ~arm ~x86"
+KEYWORDS="amd64 arm x86"
 IUSE="bluetooth +connman +libnotify ofono static-libs test-binaries +udev"
 
-RDEPEND=""
+RDEPEND=">=dev-libs/efl-1.7.9999
+		sys-apps/dbus
+		connman? ( >=net-misc/connman-0.75 )
+		libnotify? ( >=media-libs/evas-1.7.5 )
+		udev? ( sys-power/upower sys-fs/udisks:0 )
+"
 DEPEND="${RDEPEND}"
 
 src_prepare() {

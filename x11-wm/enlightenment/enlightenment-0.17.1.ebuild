@@ -12,7 +12,7 @@ DESCRIPTION="Enlightenment DR17 window manager"
 SRC_URI="http://download.enlightenment.org/releases/${MY_P}.tar.bz2"
 
 LICENSE="BSD-2"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 x86 arm"
 SLOT="0.17/${PV}"
 
 # The @ is just an anchor to expand from
@@ -25,7 +25,9 @@ IUSE_E_MODULES="
 
 IUSE="emotion pam spell static-libs +udev ukit ${IUSE_E_MODULES}"
 
-RDEPEND=""
+RDEPEND=">=dev-libs/efl-1.7.9999
+		>=media-libs/elementary-1.7.9999
+"
 
 DEPEND="${RDEPEND}"
 
