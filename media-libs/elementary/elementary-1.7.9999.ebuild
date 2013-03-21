@@ -20,7 +20,7 @@ SLOT="0"
 IUSE=""
 
 RDEPEND=""
-DEPEND=">=dev-libs/efl-0.17.9999"
+DEPEND=">=dev-libs/efl-1.7.9999"
 PDEPEND=""
 
 src_prepare() {
