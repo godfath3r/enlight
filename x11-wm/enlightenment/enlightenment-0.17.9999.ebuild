@@ -16,10 +16,11 @@ HOMEPAGE="http://www.enlightenment.org/"
 
 LICENSE="BSD"
 SLOT="0"
-IUSE=""
+IUSE="ephysics"
 
 RDEPEND=">=dev-libs/efl-1.7.9999
 		>=media-libs/elementary-1.7.9999
+		ephysics? ( dev-libs/efl[physics] )
 "
 DEPEND="${RDEPEND}"
 PDEPEND=""
@@ -29,6 +30,11 @@ src_prepare() {
 		eautopoint
 		eautoreconf
 	fi
+}
+
+src_configure() {
+	econf \
+		$(use_enable ephysics)
 }
 
 src_install() {
