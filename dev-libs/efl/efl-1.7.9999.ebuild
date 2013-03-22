@@ -105,3 +105,11 @@ src_compile() {
 src_install() {
 	default
 }
+
+pkg_postinst() {
+        if use debug ; then
+                elog "Be aware that in order for debugging to work"
+                elog "FEATURES=\"splitdebug\" needs to be turned on"
+                elog "within your make.conf file"
+        fi
+}
