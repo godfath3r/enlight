@@ -16,9 +16,9 @@ HOMEPAGE="http://www.enlightenment.org/"
 
 LICENSE="BSD"
 SLOT="0"
-IUSE="alsa systemd valgrind +X wayland opengl fb sdl cocoa fontconfig +bidi
-harfbuzz egl pixman +gif +svg +tiff +webp glib +gstreamer +pulseaudio gesture
-+physics multisense v4l2 +curl xinerama xprint xscreensaver doc"
+IUSE="+bidi curl cocoa doc egl fb fontconfig +gif gesture +gstreamer 
+harfbuzz multisense opengl +physics pixman +pulseaudio sdl +systemd tiff v4l2
+valgrind wayland webp +X xinerama xprint xscreensaver"
 
 RDEPEND="dev-libs/check
 	dev-lang/lua
@@ -33,6 +33,7 @@ RDEPEND="dev-libs/check
 	sdl? ( media-libs/libsdl )
 	gif? ( media-libs/giflib )
 	bidi? ( >=dev-libs/fribidi-0.19.2 )
+	webp? ( media-libs/libwebp  )
 	X? (
 		x11-libs/libX11
 		x11-libs/libXcomposite
@@ -47,7 +48,6 @@ RDEPEND="dev-libs/check
 		xprint? ( x11-libs/libXp )
 		xscreensaver? ( x11-libs/libXScrnSaver )
 	)
-	alsa? ( media-libs/alsa-lib  )
 	pulseaudio? ( media-sound/pulseaudio  )
 	curl? ( net-misc/curl )
 "
