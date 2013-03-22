@@ -16,7 +16,7 @@ HOMEPAGE="http://www.enlightenment.org/"
 
 LICENSE="BSD"
 SLOT="0"
-IUSE=""
+IUSE="-debug"
 
 RDEPEND=">=dev-libs/efl-1.7.9999
 	>=media-libs/elementary-1.7.9999
@@ -30,7 +30,9 @@ src_prepare() {
 		eautoreconf
 	fi
 }
-
+src_compile() {
+	use debug && append-flags -g
+}
 src_install() {
 	default
 }

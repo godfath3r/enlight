@@ -20,7 +20,7 @@ LICENSE="BSD"
 SLOT="0"
 IUSE="alsa crypto tests dbus-services systemd valgrind +X wayland opengl fb sdl
 cocoa fontconfig +bidi harfbuzz egl pixman +gif +jpeg +png svg tiff webp glib +gstreamer
-+pulseaudio gesture +physics multisense xinerama v4l2 +xprint +xscreensaver doc"
++pulseaudio gesture +physics multisense xinerama v4l2 +xprint +xscreensaver doc -debug"
 
 RDEPEND="dev-libs/check
 	dev-lang/lua
@@ -98,7 +98,9 @@ src_configure() {
                 $(use_enable xscreensaver) \
                 $(use_enable doc)
 }
-
+src_compile() {
+	use debug && append-flags -g
+}
 
 src_install() {
 	default
