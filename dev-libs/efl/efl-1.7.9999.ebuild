@@ -18,7 +18,7 @@ HOMEPAGE="http://www.enlightenment.org/"
 
 LICENSE="BSD"
 SLOT="0"
-IUSE="alsa crypto tests dbus-services systemd valgrind +X wayland opengl fb sdl
+IUSE="alsa crypto tests dbus systemd valgrind +X wayland opengl fb sdl
 cocoa fontconfig +bidi harfbuzz egl pixman +gif +jpeg +png svg tiff webp glib +gstreamer
 +pulseaudio gesture +physics multisense xinerama v4l2 +xprint +xscreensaver doc -debug"
 
@@ -66,7 +66,7 @@ src_configure() {
                $(use_enable alsa) \
                 $(use_enable crypto) \
                 $(use_enable tests) \
-                $(use_enable dbus-services) \
+                $(use_enable dbus dbus-services) \
                 $(use_enable systemd) \
                 $(use_enable valgrind) \
                 $(use_enable X) \
