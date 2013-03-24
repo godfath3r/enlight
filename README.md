@@ -12,9 +12,9 @@ $ mkdir -p /usr/local/portage
 $ cd /usr/local/portage/
 $ git clone https://github.com/godfath3r/enlight.git
 (if you have old gentoo install)
-$ echo "PORTDIR_OVERLAY=\"/usr/local/portage/enlight\"" >> /etc/make.conf 
+$ echo "PORTDIR_OVERLAY=\"/usr/local/portage/enlight \$PORTDIR_OVERLAY\"" >> /etc/make.conf
 (OR for new installations)
-$ echo "PORTDIR_OVERLAY=\"/usr/local/portage/enlight\"" >> /etc/portage/make.conf 
+$ echo "PORTDIR_OVERLAY=\"/usr/local/portage/enlight \$PORTDIR_OVERLAY\"" >> /etc/portage/make.conf 
 ```
 You can always consult gentoo wiki:
 http://wiki.gentoo.org/wiki/Overlay#Treatment_of_overlays
