@@ -16,9 +16,9 @@ HOMEPAGE="http://www.enlightenment.org/"
 
 LICENSE="BSD"
 SLOT="0"
-IUSE="+bidi curl cocoa doc egl fb fontconfig +gif gesture +gstreamer 
-harfbuzz multisense opengl +physics pixman +pulseaudio sdl +systemd tiff v4l2
-valgrind wayland webp +X xinerama xprint xscreensaver"
+IUSE="+audio +bidi +curl doc egl examples fb +fontconfig gesture +gif +gstreamer
+harfbuzz +libmount multisense nls +physics pixman +pulseaudio sdl svg systemd +tiff
+tile-rotate tizen +tslib v4l2 valgrind wayland webp xim +X xine xinerama"
 
 RDEPEND="dev-libs/check
 	dev-lang/lua
@@ -45,9 +45,10 @@ RDEPEND="dev-libs/check
 		x11-libs/libXrender
 		x11-libs/libXtst
 		xinerama? ( x11-libs/libXinerama x11-libs/libXrandr )
-		xprint? ( x11-libs/libXp )
-		xscreensaver? ( x11-libs/libXScrnSaver )
+		x11-libs/libXp
+		x11-libs/libXScrnSaver
 	)
+	xine? ( media-libs/xine-lib )
 	pulseaudio? ( media-sound/pulseaudio  )
 	curl? ( net-misc/curl )
 "
@@ -62,30 +63,37 @@ src_prepare() {
 
 src_configure() {
        econf \
+	   			$(use_enable nls)\
+	   			$(use_enable doc)\
                 $(use_enable systemd) \
                 $(use_enable valgrind) \
                 $(use_enable wayland) \
                 $(use_enable fb) \
                 $(use_enable sdl) \
-                $(use_enable cocoa) \
                 $(use_enable fontconfig) \
-                $(use_enable bidi freebidi) \
+                $(use_enable bidi fribidi) \
                 $(use_enable harfbuzz) \
                 $(use_enable egl) \
                 $(use_enable pixman) \
+	   			$(use_enable tile-rotate)\
                 $(use_enable gif image-loader-gif) \
                 $(use_enable svg image-loader-svg) \
                 $(use_enable tiff image-loader-tiff) \
                 $(use_enable webp image-loader-webp) \
                 $(use_enable gstreamer) \
                 $(use_enable curl) \
+	   			$(use_enable tslib)\
+	   			$(use_enable audio)\
                 $(use_enable pulseaudio) \
                 $(use_enable gesture) \
+	   			$(use_enable xim)\
+	   			$(use_enable tizen)\
+	   			$(use_enable libmount)\
                 $(use_enable physics) \
                 $(use_enable multisense) \
+	   			$(use_enable examples always-build-examples)\
                 $(use_enable v4l2) 
 }
-
 
 src_install() {
 	default
