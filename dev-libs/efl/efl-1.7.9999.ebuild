@@ -17,7 +17,7 @@ HOMEPAGE="http://www.enlightenment.org/"
 LICENSE="BSD"
 SLOT="0"
 IUSE="+audio +bidi +curl doc egl examples fb +fontconfig gesture +gif +gstreamer
-harfbuzz +libmount multisense +nls +physics pixman +pulseaudio sdl +svg systemd +tiff
+harfbuzz +libmount multisense nls +physics pixman +pulseaudio sdl svg systemd +tiff
 tile-rotate tizen +tslib v4l2 valgrind wayland webp xim +X xine xinerama"
 
 RDEPEND="dev-libs/check
