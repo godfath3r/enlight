@@ -17,7 +17,7 @@ HOMEPAGE="http://www.enlightenment.org/"
 LICENSE="BSD"
 SLOT="0"
 IUSE="+audio +bidi +curl doc egl examples fb +fontconfig gesture +gif +gstreamer
-harfbuzz +libmount multisense nls +physics pixman +pulseaudio sdl svg systemd +tiff
+harfbuzz +libmount multisense +nls +physics pixman +pulseaudio sdl +svg systemd +tiff
 tile-rotate tizen +tslib v4l2 valgrind wayland webp xim +X xine xinerama"
 
 RDEPEND="dev-libs/check
@@ -27,10 +27,14 @@ RDEPEND="dev-libs/check
 	media-libs/libpng
 	media-libs/gst-plugins-base:0.10
 	dev-perl/GStreamer-Interfaces
-	gstreamer? ( media-libs/gstreamer:0.10 )
+	gstreamer? ( 
+		media-libs/gstreamer:0.10
+		=media-plugins/evas_generic_loaders-1.7.9999[gstreamer] 
+	)
 	physics? ( >=sci-physics/bullet-2.80 )
 	doc? ( app-doc/doxygen )
 	sdl? ( media-libs/libsdl )
+	svg? ( =media-plugins/evas_generic_loaders-1.7.9999[svg] )
 	gif? ( media-libs/giflib )
 	bidi? ( >=dev-libs/fribidi-0.19.2 )
 	webp? ( media-libs/libwebp  )
@@ -55,10 +59,8 @@ RDEPEND="dev-libs/check
 DEPEND="${RDEPEND}"
 
 src_prepare() {
-	if [[ ! -e configure ]] ; then
-		eautopoint
-		eautoreconf
-	fi
+	eautopoint
+	eautoreconf
 }
 
 src_configure() {
@@ -77,7 +79,6 @@ src_configure() {
                 $(use_enable pixman) \
 	   			$(use_enable tile-rotate)\
                 $(use_enable gif image-loader-gif) \
-                $(use_enable svg image-loader-svg) \
                 $(use_enable tiff image-loader-tiff) \
                 $(use_enable webp image-loader-webp) \
                 $(use_enable gstreamer) \
