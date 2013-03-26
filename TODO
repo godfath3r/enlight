@@ -1,7 +1,7 @@
 efl-1.7.9999 git
 [ ] mess with --enable --disable config options
 [ ] enable profiles: dev, debug, release (and bind the appropriate USE flags)
-[ ] fix svg flag. image-loader thing
+[X] fix svg flag. image-loader thing
 [ ] wait for xine bug to be fixed https://phab.enlightenment.org/T18
 
 enlightenment-0.17.9999
