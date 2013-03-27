@@ -19,6 +19,7 @@ IUSE=""
 RDEPEND="
 	>=dev-libs/efl-1.7.9999
 	>=media-libs/elementary-1.7.9999
+	>=media-libs/emotion_generic_players-1.7.9999
 	"
 DEPEND="${RDEPEND}"
 
