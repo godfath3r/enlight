@@ -27,10 +27,14 @@ RDEPEND="dev-libs/check
 	media-libs/libpng
 	media-libs/gst-plugins-base:0.10
 	dev-perl/GStreamer-Interfaces
-	gstreamer? ( media-libs/gstreamer:0.10 )
+	gstreamer? ( 
+		media-libs/gstreamer:0.10
+		=media-plugins/evas_generic_loaders-1.7.9999[gstreamer] 
+	)
 	physics? ( >=sci-physics/bullet-2.80 )
 	doc? ( app-doc/doxygen )
 	sdl? ( media-libs/libsdl )
+	svg? ( =media-plugins/evas_generic_loaders-1.7.9999[svg] )
 	gif? ( media-libs/giflib )
 	bidi? ( >=dev-libs/fribidi-0.19.2 )
 	webp? ( media-libs/libwebp  )
@@ -55,44 +59,41 @@ RDEPEND="dev-libs/check
 DEPEND="${RDEPEND}"
 
 src_prepare() {
-	if [[ ! -e configure ]] ; then
-		eautopoint
-		eautoreconf
-	fi
+	eautopoint
+	eautoreconf
 }
 
 src_configure() {
-       econf \	
-	   $(use_enable nls)\
-	   $(use_enable doc)\
-	   $(use_enable systemd)\
-	   $(use_enable valgrind) \
-	   $(use_enable wayland) \
-	   $(use_enable fb) \
-	   $(use_enable sdl) \
-	   $(use_enable fontconfig) \
-	   $(use_enable bidi fribidi) \
-	   $(use_enable harfbuzz) \
-	   $(use_enable egl) \
-	   $(use_enable pixman) \
-	   $(use_enable tile-rotate)\
-	   $(use_enable gif image-loader-gif)\
-	   $(use_enable svg image-loader-svg)\
-	   $(use_enable tiff image-loader-tiff)\
-	   $(use_enable webp image-loader-webp)\
-	   $(use_enable gstreamer) \
-	   $(use_enable curl) \
-	   $(use_enable tslib)\
-	   $(use_enable audio)\
-	   $(use_enable pulseaudio) \
-	   $(use_enable gesture) \
-	   $(use_enable xim)\
-	   $(use_enable tizen)\
-	   $(use_enable libmount)\
-	   $(use_enable physics) \
-	   $(use_enable multisense)\
-	   $(use_enable examples always-build-examples)\
-	   $(use_enable v4l2) 
+       econf \
+	   			$(use_enable nls)\
+	   			$(use_enable doc)\
+                $(use_enable systemd) \
+                $(use_enable valgrind) \
+                $(use_enable wayland) \
+                $(use_enable fb) \
+                $(use_enable sdl) \
+                $(use_enable fontconfig) \
+                $(use_enable bidi fribidi) \
+                $(use_enable harfbuzz) \
+                $(use_enable egl) \
+                $(use_enable pixman) \
+	   			$(use_enable tile-rotate)\
+                $(use_enable gif image-loader-gif) \
+                $(use_enable tiff image-loader-tiff) \
+                $(use_enable webp image-loader-webp) \
+                $(use_enable gstreamer) \
+                $(use_enable curl) \
+	   			$(use_enable tslib)\
+	   			$(use_enable audio)\
+                $(use_enable pulseaudio) \
+                $(use_enable gesture) \
+	   			$(use_enable xim)\
+	   			$(use_enable tizen)\
+	   			$(use_enable libmount)\
+                $(use_enable physics) \
+                $(use_enable multisense) \
+	   			$(use_enable examples always-build-examples)\
+                $(use_enable v4l2) 
 }
 
 src_install() {
