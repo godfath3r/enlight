@@ -10,7 +10,7 @@ EGIT_REPO_URI="http://git.enlightenment.org/apps/${PN}.git"
 inherit git-2 autotools eutils
 EGIT_BRANCH="master"
 
-KEYWORDS="x86 amd64"
+KEYWORDS="x86 amd64 arm"
 
 LICENSE="BSD-2"
 SLOT="0"
