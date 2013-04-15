@@ -93,6 +93,7 @@ src_configure() {
                 $(use_enable physics) \
                 $(use_enable multisense) \
 	   			$(use_enable examples always-build-examples)\
+				$(use_enable xine) \
                 $(use_enable v4l2) 
 }
 
