@@ -1,7 +1,7 @@
 enlight overlay
 ===============
 
-This is my local overlay for having enlightenment 0.17.1 (latest stable) with 
+This is my local overlay for having enlightenment 0.17.2.1 (latest stable) with 
 recent git efl libraries (1.8 -unstable). Even though its for personal use, if
 you want to have a try, continue reading.
 
@@ -23,8 +23,12 @@ To install efl, elementary and enlightenment:
 ```bash
 $ emerge -av efl =elementary-1.7.9999 =enlightenment-0.17.1
 ```
+To install efl, elementary and git enlightenment:
+```bash
+$ emerge -av efl =elementary-1.7.9999 =enlightenment-0.17.9999
+```
 
 **NOTE:**
 Just for now, the ebuilds are dumb, they just resolve basic dependencies 
-(will add flags usage etc later...)
+(will fix flags usage etc later...)
 
