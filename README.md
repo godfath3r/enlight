@@ -21,7 +21,7 @@ http://wiki.gentoo.org/wiki/Overlay#Treatment_of_overlays
 
 To install efl, elementary and enlightenment:
 ```bash
-$ emerge -av efl =elementary-1.7.9999 =enlightenment-0.17.1
+$ emerge -av efl =elementary-1.7.9999 =enlightenment-0.17.2.1
 ```
 To install efl, elementary and git enlightenment:
 ```bash
